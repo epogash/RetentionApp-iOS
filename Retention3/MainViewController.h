@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "HighScoreViewController.h"
-//#import "NumbersViewController.h"
+#import "DifficultyViewController.h"
 
 @interface MainViewController : UIViewController
-@property (nonatomic, strong) NSNumber *highScore;
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender;
+@property (nonatomic, strong) NSNumber *highestLevel;
+@property (nonatomic, strong) IBOutlet UILabel *label;
+- (id)init;
 @end
 
 

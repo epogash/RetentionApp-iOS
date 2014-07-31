@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NumbersViewController.h"
 
 @interface DifficultyViewController : UIViewController
-
+@property NSTimeInterval timeInterval;
 @end

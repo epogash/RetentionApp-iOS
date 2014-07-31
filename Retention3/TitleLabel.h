@@ -10,4 +10,6 @@
 
 @interface TitleLabel : UILabel
 
+@property(nonatomic,copy) NSAttributedString *attributedText;
+
 @end

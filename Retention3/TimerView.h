@@ -10,4 +10,9 @@
 
 @interface TimerView : UIView
 
+@property NSInteger percent;
+@property NSInteger initialPercent;
+@property CGFloat startAngle;
+@property CGFloat endAngle;
+
 @end

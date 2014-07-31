@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PauseAlertView : UIView
+@interface PauseAlertView : UIView {
+     CGRect originalFrame;
+     BOOL isShown;
+}
+
+@property (nonatomic) BOOL isShown;
+
+- (void)show;
+- (void)hide;
+
 
 @end

@@ -8,8 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "MainViewController.h"
+#import "SHK.h"
 
 @interface HighScoreViewController : UIViewController
+@property (strong, nonatomic) UILabel *highScoreLabel;
 @property (strong, nonatomic) UILabel *highestLevelLabel;
-@property (strong, nonatomic) NSNumber *highScore;
+
+@property (strong, nonatomic) IBOutlet UIButton *shareHighScoreButton;
+
+- (void)myButtonHandlerAction;
+
 @end

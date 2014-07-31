@@ -45,9 +45,9 @@
 // Facebook - http://www.facebook.com/developers
 // If SHKFacebookUseSessionProxy is enabled then SHKFacebookSecret is ignored and should be left blank
 
-#define SHKFacebookUseSessionProxy  NO 
-#define SHKFacebookKey				@""
-#define SHKFacebookSecret			@""
+#define SHKFacebookUseSessionProxy  NO
+#define SHKFacebookKey				@"480790838723685"
+#define SHKFacebookSecret			@"5a08a9519a15a58c6185c64d2d4ca9c4"
 #define SHKFacebookSessionProxyURL  @""
 
 // Read It Later - http://readitlaterlist.com/api/?shk
@@ -69,9 +69,9 @@
  2. 'Application Type' should be set to BROWSER (not client)
  3. 'Callback URL' should match whatever you enter in SHKTwitterCallbackUrl.  The callback url doesn't have to be an actual existing url.  The user will never get to it because ShareKit intercepts it before the user is redirected.  It just needs to match.
  */
-#define SHKTwitterConsumerKey		@""
-#define SHKTwitterSecret			@""
-#define SHKTwitterCallbackUrl		@"" // You need to set this if using OAuth, see note above (xAuth users can skip it)
+#define SHKTwitterConsumerKey		@"uQowdmL8h5eKpyz1xCtanW7QF"
+#define SHKTwitterSecret			@"JgHuHVp6ddSdlxXcl5Apf0A3rK5ty4iCDvSzAM3rVtdnZoDris"
+#define SHKTwitterCallbackUrl		@"http://www.callbackurl.com" // You need to set this if using OAuth, see note above (xAuth users can skip it)
 #define SHKTwitterUseXAuth			0 // To use xAuth, set to 1
 #define SHKTwitterUsername			@"" // Enter your app's twitter account if you'd like to ask the user to follow it when logging in. (Only for xAuth)
 
