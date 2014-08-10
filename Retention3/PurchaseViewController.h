@@ -15,8 +15,9 @@
 @property (strong, nonatomic) SKProduct *product;
 @property (strong, nonatomic) NSString *productID;
 @property (strong, nonatomic) IBOutlet UILabel *productTitle;
-@property (strong, nonatomic) IBOutlet UIButton *buyButton;
 @property (strong, nonatomic) IBOutlet UITextView *productDescription;
+@property (strong, nonatomic) IBOutlet UIButton *buyButton;
 - (IBAction)buyProduct:(id)sender;
+- (IBAction)restoreCompletedTransactions;
 - (void) getProductInfo;
 @end

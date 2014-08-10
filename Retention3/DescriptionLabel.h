@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DecriptionLabel : UILabel
+@interface DescriptionLabel : UILabel
 
 @end

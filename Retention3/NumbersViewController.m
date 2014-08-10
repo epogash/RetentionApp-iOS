@@ -259,6 +259,7 @@ int livesRemaining = 3;
 }
 
 -(void) goToMainMenu {
+    i = 1;
     [self performSegueWithIdentifier:@"mainMenuSegue" sender:self];
 }
 

@@ -14,18 +14,16 @@
 
 @implementation PurchaseViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
+    [[SKPaymentQueue defaultQueue] addTransactionObserver:self];
+    self.productDescription.userInteractionEnabled = NO;
+    self.productDescription.layer.cornerRadius = 10;
+    self.productDescription.layer.borderWidth = 2;
+    self.productDescription.layer.borderColor = [UIColor orangeColor].CGColor;
+    
     [super viewDidLoad];
+    self.productID = @"com.retention.retention.hardcore";
     [self getProductInfo];
     // Do any additional setup after loading the view.
 }
@@ -71,11 +69,11 @@
 {
     
     NSArray *products = response.products;
-    
+    NSLog(@"products count: %lu", (unsigned long)products.count);
     if (products.count != 0)
     {
+        NSLog(@"product[0] %@", products[0]);
         _product = products[0];
-        _buyButton.enabled = YES;
         _productTitle.text = _product.localizedTitle;
         _productDescription.text = _product.localizedDescription;
     } else {
@@ -108,6 +106,9 @@
                 [[SKPaymentQueue defaultQueue]
                  finishTransaction:transaction];
                 break;
+            case SKPaymentTransactionStateRestored:
+                [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
+                break;
                 
             case SKPaymentTransactionStateFailed:
                 NSLog(@"Transaction Failed");
@@ -123,10 +124,13 @@
 
 -(void)unlockFeature
 {
-    _buyButton.enabled = NO;
-    [_buyButton setTitle:@"Purchased"
-                forState:UIControlStateDisabled];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setBool:YES forKey:@"hardcoreUnlocked"];
+    [defaults setBool:YES forKey:@"hardcoreModeUnlocked"];
+    [defaults synchronize];
 }
+
+- (IBAction)restoreCompletedTransactions {
+    [[SKPaymentQueue defaultQueue] restoreCompletedTransactions];
+}
+
 @end

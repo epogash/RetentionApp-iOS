@@ -36,6 +36,9 @@
     } else if([segue.identifier isEqualToString:@"advancedSegue"]) {
         NumbersViewController *controller = (NumbersViewController *)segue.destinationViewController;
         controller.timeInterval = 0.20;
+    } else if([segue.identifier isEqualToString:@"hardcoreModeSegue"]) {
+        NumbersViewController *controller = (NumbersViewController *)segue.destinationViewController;
+        controller.timeInterval = 0.17;
     }
 }
 
@@ -58,7 +61,12 @@
 
 -(IBAction) hardcoreButtonPressed
 {
-    
+     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if([defaults valueForKey:@"hardcoreModeUnlocked"]) {
+        [self performSegueWithIdentifier:@"hardcoreModeSegue" sender:self];
+    } else {
+        [self performSegueWithIdentifier:@"purchaseSegue" sender:self];
+    }
 }
 
 /*
