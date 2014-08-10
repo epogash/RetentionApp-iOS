@@ -7,6 +7,7 @@
 //
 
 #import "DefaultSHKConfigurator.h"
+#import "ShareKit.h"
 
 @interface MySHKConfigurator : DefaultSHKConfigurator
 

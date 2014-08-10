@@ -11,4 +11,7 @@
 
 @interface DifficultyViewController : UIViewController
 @property NSTimeInterval timeInterval;
+
+- (IBAction) hardcoreButtonPressed;
+
 @end

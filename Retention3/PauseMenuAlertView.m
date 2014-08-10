@@ -30,7 +30,6 @@
 
 - (void)show
 {
-    NSLog(@"show");
     isShown = YES;
     self.transform = CGAffineTransformMakeScale(0.1, 0.1);
     self.alpha = 0;
@@ -43,7 +42,6 @@
 
 - (void)hide
 {
-    NSLog(@"hide");
     isShown = NO;
     [UIView beginAnimations:@"hideAlert" context:nil];
     [UIView setAnimationDelegate:self];

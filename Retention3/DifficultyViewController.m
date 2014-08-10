@@ -56,6 +56,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(IBAction) hardcoreButtonPressed
+{
+    
+}
+
 /*
 #pragma mark - Navigation
 

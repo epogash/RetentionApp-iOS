@@ -6,8 +6,11 @@
 //  Copyright (c) 2014 Eric Pogash. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+typedef void (^RequestProductsCompletionHandler)(BOOL success, NSArray * products);
 
-@interface IAHelper : NObject
+@interface IAPHelper : NSObject
+
+- (id)initWithProductIdentifiers:(NSSet *)productIdentifiers;
+- (void)requestProductsWithCompletionHandler:(RequestProductsCompletionHandler)completionHandler;
 
 @end

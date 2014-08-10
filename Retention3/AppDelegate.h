@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MySHKConfigurator.h"
+#import "SHKFacebook.h"
+#import "ShareKit.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

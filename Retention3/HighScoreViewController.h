@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "MainViewController.h"
-#import "SHK.h"
+#import "ShareKit.h"
 
 @interface HighScoreViewController : UIViewController
 @property (strong, nonatomic) UILabel *highScoreLabel;

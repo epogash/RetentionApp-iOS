@@ -7,12 +7,16 @@
 //
 
 #import "AppDelegate.h"
+#import "SHKConfiguration.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    DefaultSHKConfigurator *configurator = [[MySHKConfigurator alloc] init];
+    [SHKConfiguration sharedInstanceWithConfigurator:configurator];
+    
     return YES;
 }
 							
@@ -35,12 +39,28 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
+     [SHKFacebook handleDidBecomeActive];
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
+    [SHKFacebook handleWillTerminate];
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+            sourceApplication:(NSString *)sourceApplication
+            annotation:(id)annotation
+{
+    NSString* scheme = [url scheme];
+    
+    if ([scheme hasPrefix:[NSString stringWithFormat:@"fb%@", SHKCONFIG(facebookAppId)]]) {
+        return [SHKFacebook handleOpenURL:url sourceApplication:(NSString *)sourceApplication];
+    }
+    
+    return YES;
 }
 
 @end
