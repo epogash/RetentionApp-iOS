@@ -12,6 +12,8 @@
 
 @end
 
+#define IS_IPHONE5 (([[UIScreen mainScreen] bounds].size.height-568)?NO:YES)
+
 @implementation NumbersViewController
 
 @synthesize timeInterval;
@@ -63,7 +65,7 @@
 }
 NSInteger const cellWidth = 90;
 int i = 1;
-int livesRemaining = 3;
+int livesRemaining;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -74,8 +76,16 @@ int livesRemaining = 3;
     return self;
 }
 
+-(void) viewWillAppear:(BOOL)animated {
+    if(![defaults valueForKey:@"livesRemaining"]) {
+        [defaults setValue:@"3" forKey:@"livesRemaining"];
+    }
+    livesRemaining = [[defaults valueForKey:@"livesRemaining"] intValue];
+}
+
 - (void)viewDidLoad
 {
+    defaults =  [NSUserDefaults standardUserDefaults];
     pauseCountdownButton.hidden = NO;
     pauseCountdownButton.enabled = YES;
     
@@ -91,7 +101,6 @@ int livesRemaining = 3;
     areYouSureView.layer.borderWidth = 2.0f;
     areYouSureView.layer.masksToBounds = YES;
     
-    defaults =  [NSUserDefaults standardUserDefaults];
     highestScore = [defaults valueForKey:@"highestScore"];
     if(!highestScore) {
         highestScore = [NSNumber numberWithInt:0];
@@ -121,6 +130,7 @@ int livesRemaining = 3;
     self.getReadyLabel.textAlignment = NSTextAlignmentCenter;
     //tapNumbersLabel instantiation
     self.tapNumbersLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, [[UIScreen mainScreen] bounds].size.height/10, [[UIScreen mainScreen] bounds].size.width, 80)];
+    [self.tapNumbersLabel setBackgroundColor:[UIColor clearColor]];
     self.tapNumbersLabel.numberOfLines = 0;
     self.tapNumbersLabel.textAlignment = NSTextAlignmentCenter;
     //countdownLabel instantiation
@@ -142,6 +152,7 @@ int livesRemaining = 3;
     self.scoreLabel.textAlignment = NSTextAlignmentRight;
     self.scoreLabel.font = [UIFont systemFontOfSize:15.0];
     self.scoreLabel.text = [NSString stringWithFormat:@"Score:\n%@", currentScore];
+    [self.scoreLabel setBackgroundColor:[UIColor clearColor]];
     
     //add subviews
     [self.view addSubview:self.countdownLabel];
@@ -192,7 +203,7 @@ int livesRemaining = 3;
     [self.view addSubview:dimView];
     
     if(!pauseMainMenuButton) {
-        pauseMainMenuButton = [[CustomButton alloc] initWithFrame:CGRectMake(pauseMenu.frame.size.width/3 - 29, pauseMenu.frame.size.width/3 - 20, pauseMenu.frame.size.width/3 + 40, 35)];
+        pauseMainMenuButton = [[CustomButton alloc] initWithFrame:CGRectMake(pauseMenu.frame.size.width/3 - 29, pauseMenu.frame.size.height/3 - 35, pauseMenu.frame.size.width/3 + 40, 35)];
         [pauseMainMenuButton setTitle:@"Main Menu" forState:UIControlStateNormal];
         [pauseMainMenuButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [pauseMainMenuButton setTitleColor:[UIColor grayColor] forState:UIControlStateHighlighted];
@@ -204,7 +215,7 @@ int livesRemaining = 3;
     [self.pauseMenu addSubview:pauseMainMenuButton];
     
     if(!closeButton) {
-        closeButton = [[CustomButton alloc] initWithFrame:CGRectMake(pauseMenu.frame.size.width/3 - 18, pauseMenu.frame.size.height - 90, pauseMenu.frame.size.width/3 + 20, 35)];
+        closeButton = [[CustomButton alloc] initWithFrame:CGRectMake(pauseMenu.frame.size.width/3 - 18, pauseMenu.frame.size.height - 80, pauseMenu.frame.size.width/3 + 20, 35)];
         [closeButton setTitle:@"Resume" forState:UIControlStateNormal];
         [closeButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [closeButton setTitleColor:[UIColor grayColor] forState:UIControlStateHighlighted];
@@ -321,7 +332,7 @@ int livesRemaining = 3;
         
         highScoreTimer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(decrementSpin) userInfo:nil repeats:YES];
         
-        [self.view addSubview:_collectionView];
+        
         [self.view addSubview:highestScoreLabel];
         [self.view addSubview:scoreLabel];
         //if only one number, print 'number' instead of 'numbers'
@@ -332,6 +343,15 @@ int livesRemaining = 3;
             self.tapNumbersLabel.text = [NSString stringWithFormat:@"Tap the %d numbers in order", [self.levelNumberLabel.text intValue]];
         }
         [self.view addSubview:self.tapNumbersLabel];
+        [self.view addSubview:_collectionView];
+        if(IS_IPHONE5) {
+            [_collectionView setTranslatesAutoresizingMaskIntoConstraints:NO];
+            NSLayoutConstraint *con1 = [NSLayoutConstraint constraintWithItem:_collectionView attribute:NSLayoutAttributeWidth relatedBy:0 toItem:self.view attribute:NSLayoutAttributeWidth multiplier:1 constant:0];
+            NSLayoutConstraint *con2 = [NSLayoutConstraint constraintWithItem:_collectionView attribute:NSLayoutAttributeHeight relatedBy:0 toItem:self.view attribute:NSLayoutAttributeHeight multiplier:1 constant:0];
+            NSLayoutConstraint *con3 = [NSLayoutConstraint constraintWithItem:_collectionView attribute:NSLayoutAttributeBottom relatedBy:0 toItem:self.view attribute:NSLayoutAttributeBottom multiplier:1 constant:(150.0)];
+            NSArray *constraints = @[con1, con2, con3];
+            [self.view addConstraints:constraints];
+        }
         
         //select all numbers by tapping them in order...
         

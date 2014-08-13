@@ -7,6 +7,7 @@
 //
 
 #import "PaymentViewController.h"
+#import "PayPalPayment.h"
 
 @interface PaymentViewController ()
 
@@ -25,6 +26,13 @@
 
 - (void)viewDidLoad
 {
+    UIButton *button = [[PayPal getPayPalInst]
+                        getPayButtonWithTarget:self
+                        andAction:@selector(payWithPayPal)
+                        andButtonType:BUTTON_278x43
+                        andButtonText:BUTTON_TEXT_PAY];
+    
+    [self.view addSubview:button];
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
@@ -33,6 +41,11 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)payWithPayPal {
+    PayPalPayment *payment = [[PayPalPayment alloc] init];
+    [[PayPal getPayPalInst] advancedCheckoutWithPayment:payment];
 }
 
 /*

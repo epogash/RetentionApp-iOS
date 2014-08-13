@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0731A537199A862A00E4E289 /* ShareKit.license in Resources */ = {isa = PBXBuildFile; fileRef = 0731A536199A862A00E4E289 /* ShareKit.license */; };
+		0731A549199BDD4200E4E289 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 0731A548199BDD4200E4E289 /* Reachability.m */; };
 		073C570D192459C30065FBA5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 073C570C192459C30065FBA5 /* Foundation.framework */; };
 		073C570F192459C30065FBA5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 073C570E192459C30065FBA5 /* CoreGraphics.framework */; };
 		073C5711192459C30065FBA5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 073C5710192459C30065FBA5 /* UIKit.framework */; };
@@ -68,6 +70,16 @@
 		07B6759F198B0CFD00E99B77 /* PinterestSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 07B67597198B0CFB00E99B77 /* PinterestSDKResources.bundle */; };
 		07B675A6198B0E3900E99B77 /* GTMOAuth2ViewTouch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07B675A3198B0E3900E99B77 /* GTMOAuth2ViewTouch.xib */; };
 		07B675A9198B106500E99B77 /* MySHKConfigurator.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B675A8198B106500E99B77 /* MySHKConfigurator.m */; };
+		07B7BF3A199A630900D79413 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 07B7BF39199A630900D79413 /* Settings.bundle */; };
+		07B7BF3E199A64B700D79413 /* BSD.license in Resources */ = {isa = PBXBuildFile; fileRef = 07B7BF3D199A64B700D79413 /* BSD.license */; };
+		07B7BF40199A64E400D79413 /* GeorgeKitz.license in Resources */ = {isa = PBXBuildFile; fileRef = 07B7BF3F199A64E400D79413 /* GeorgeKitz.license */; };
+		07B7BF42199A64FB00D79413 /* Colloquoy.license in Resources */ = {isa = PBXBuildFile; fileRef = 07B7BF41199A64FB00D79413 /* Colloquoy.license */; };
+		07B7BF44199A651300D79413 /* WillowGarage.license in Resources */ = {isa = PBXBuildFile; fileRef = 07B7BF43199A651300D79413 /* WillowGarage.license */; };
+		07B7BF46199A652300D79413 /* Snyder.license in Resources */ = {isa = PBXBuildFile; fileRef = 07B7BF45199A652300D79413 /* Snyder.license */; };
+		07B7BF48199A653900D79413 /* LambdaAlert.license in Resources */ = {isa = PBXBuildFile; fileRef = 07B7BF47199A653900D79413 /* LambdaAlert.license */; };
+		07B7BF4A199A655300D79413 /* Three20.license in Resources */ = {isa = PBXBuildFile; fileRef = 07B7BF49199A655300D79413 /* Three20.license */; };
+		07B7BF4C199A656400D79413 /* Openstack.license in Resources */ = {isa = PBXBuildFile; fileRef = 07B7BF4B199A656400D79413 /* Openstack.license */; };
+		07B7BF4E199A659200D79413 /* Nishimura.license in Resources */ = {isa = PBXBuildFile; fileRef = 07B7BF4D199A659200D79413 /* Nishimura.license */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -438,6 +450,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0731A536199A862A00E4E289 /* ShareKit.license */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ShareKit.license; sourceTree = "<group>"; };
+		0731A547199BDD4200E4E289 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		0731A548199BDD4200E4E289 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		073C5709192459C30065FBA5 /* Retention3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Retention3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		073C570C192459C30065FBA5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		073C570E192459C30065FBA5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -515,6 +530,17 @@
 		07B675A3198B0E3900E99B77 /* GTMOAuth2ViewTouch.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GTMOAuth2ViewTouch.xib; path = "Submodules/google-api-objectivec/Source/OAuth2/Touch/GTMOAuth2ViewTouch.xib"; sourceTree = "<group>"; };
 		07B675A7198B106500E99B77 /* MySHKConfigurator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySHKConfigurator.h; sourceTree = "<group>"; };
 		07B675A8198B106500E99B77 /* MySHKConfigurator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySHKConfigurator.m; sourceTree = "<group>"; };
+		07B7BF39199A630900D79413 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		07B7BF3C199A642600D79413 /* Perl.pl */ = {isa = PBXFileReference; lastKnownFileType = text.script.perl; path = Perl.pl; sourceTree = "<group>"; };
+		07B7BF3D199A64B700D79413 /* BSD.license */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BSD.license; sourceTree = "<group>"; };
+		07B7BF3F199A64E400D79413 /* GeorgeKitz.license */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GeorgeKitz.license; sourceTree = "<group>"; };
+		07B7BF41199A64FB00D79413 /* Colloquoy.license */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Colloquoy.license; sourceTree = "<group>"; };
+		07B7BF43199A651300D79413 /* WillowGarage.license */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WillowGarage.license; sourceTree = "<group>"; };
+		07B7BF45199A652300D79413 /* Snyder.license */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Snyder.license; sourceTree = "<group>"; };
+		07B7BF47199A653900D79413 /* LambdaAlert.license */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LambdaAlert.license; sourceTree = "<group>"; };
+		07B7BF49199A655300D79413 /* Three20.license */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Three20.license; sourceTree = "<group>"; };
+		07B7BF4B199A656400D79413 /* Openstack.license */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Openstack.license; sourceTree = "<group>"; };
+		07B7BF4D199A659200D79413 /* Nishimura.license */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Nishimura.license; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -573,6 +599,7 @@
 		073C5700192459C30065FBA5 = {
 			isa = PBXGroup;
 			children = (
+				07B7BF37199A62D300D79413 /* Resources */,
 				07B674CC198B040300E99B77 /* ShareKit.xcodeproj */,
 				073C5712192459C30065FBA5 /* Retention3 */,
 				073C5734192459C30065FBA5 /* Retention3Tests */,
@@ -634,6 +661,8 @@
 		073C5712192459C30065FBA5 /* Retention3 */ = {
 			isa = PBXGroup;
 			children = (
+				0731A547199BDD4200E4E289 /* Reachability.h */,
+				0731A548199BDD4200E4E289 /* Reachability.m */,
 				073C5744192459CA0065FBA5 /* Main_iPhone.storyboard */,
 				0780F65D1996EB1E00DBB560 /* PurchaseViewController.h */,
 				0780F65E1996EB1E00DBB560 /* PurchaseViewController.m */,
@@ -789,6 +818,34 @@
 			);
 			name = "Resources - ShareKit Library";
 			path = Submodules/ShareKit;
+			sourceTree = "<group>";
+		};
+		07B7BF37199A62D300D79413 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				07B7BF3B199A63E900D79413 /* Licenses */,
+				07B7BF39199A630900D79413 /* Settings.bundle */,
+			);
+			name = Resources;
+			path = Retention3/Resources;
+			sourceTree = "<group>";
+		};
+		07B7BF3B199A63E900D79413 /* Licenses */ = {
+			isa = PBXGroup;
+			children = (
+				07B7BF3C199A642600D79413 /* Perl.pl */,
+				07B7BF3D199A64B700D79413 /* BSD.license */,
+				07B7BF3F199A64E400D79413 /* GeorgeKitz.license */,
+				07B7BF41199A64FB00D79413 /* Colloquoy.license */,
+				07B7BF43199A651300D79413 /* WillowGarage.license */,
+				07B7BF45199A652300D79413 /* Snyder.license */,
+				07B7BF47199A653900D79413 /* LambdaAlert.license */,
+				07B7BF49199A655300D79413 /* Three20.license */,
+				07B7BF4B199A656400D79413 /* Openstack.license */,
+				07B7BF4D199A659200D79413 /* Nishimura.license */,
+				0731A536199A862A00E4E289 /* ShareKit.license */,
+			);
+			path = Licenses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1225,14 +1282,25 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07B7BF3E199A64B700D79413 /* BSD.license in Resources */,
 				07B675A6198B0E3900E99B77 /* GTMOAuth2ViewTouch.xib in Resources */,
+				07B7BF4C199A656400D79413 /* Openstack.license in Resources */,
 				07B67567198B06C000E99B77 /* ShareKit.bundle in Resources */,
+				07B7BF3A199A630900D79413 /* Settings.bundle in Resources */,
+				07B7BF46199A652300D79413 /* Snyder.license in Resources */,
+				07B7BF42199A64FB00D79413 /* Colloquoy.license in Resources */,
 				073C5728192459C30065FBA5 /* Images.xcassets in Resources */,
 				073C5746192459CA0065FBA5 /* Main_iPhone.storyboard in Resources */,
+				07B7BF40199A64E400D79413 /* GeorgeKitz.license in Resources */,
+				07B7BF4A199A655300D79413 /* Three20.license in Resources */,
+				07B7BF44199A651300D79413 /* WillowGarage.license in Resources */,
 				073C5747192459CA0065FBA5 /* Main_iPad.storyboard in Resources */,
 				076C8F22196F798F00F99950 /* HeartImage.jpg in Resources */,
 				07B6759B198B0CFC00E99B77 /* GooglePlus.bundle in Resources */,
+				07B7BF48199A653900D79413 /* LambdaAlert.license in Resources */,
+				0731A537199A862A00E4E289 /* ShareKit.license in Resources */,
 				073C5717192459C30065FBA5 /* InfoPlist.strings in Resources */,
+				07B7BF4E199A659200D79413 /* Nishimura.license in Resources */,
 				07B6759F198B0CFD00E99B77 /* PinterestSDKResources.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1262,6 +1330,7 @@
 				076C8F2E1984361300F99950 /* PauseMenuAlertView.m in Sources */,
 				076C8F251979F92100F99950 /* TimerView.m in Sources */,
 				073C574D192459DE0065FBA5 /* MainViewController.m in Sources */,
+				0731A549199BDD4200E4E289 /* Reachability.m in Sources */,
 				076C8F1D196CDA3C00F99950 /* CustomButton.m in Sources */,
 				073C574C192459DE0065FBA5 /* HighScoreViewController.m in Sources */,
 				0780F65F1996EB1E00DBB560 /* PurchaseViewController.m in Sources */,
@@ -1405,9 +1474,14 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Retention3/Retention3-Prefix.pch";
 				INFOPLIST_FILE = "Retention3/Retention3-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PayPalMobile",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
+					"-lc++",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -1431,9 +1505,14 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Retention3/Retention3-Prefix.pch";
 				INFOPLIST_FILE = "Retention3/Retention3-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PayPalMobile",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
+					"-lc++",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

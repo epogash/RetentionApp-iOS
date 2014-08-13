@@ -14,8 +14,11 @@
 
 @end
 @implementation HighScoreViewController
+@synthesize highestLevelTitleLabel;
+@synthesize highScoreTitleLabel;
 @synthesize highestLevelLabel;
 @synthesize highScoreLabel;
+@synthesize label;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,10 +31,19 @@
 
 - (void)viewDidLoad
 {
-//    CAGradientLayer *gradient = [CAGradientLayer layer];
-//    gradient.frame = self.view.bounds;
-//    gradient.colors = [NSArray arrayWithObjects:(id)[[UIColor colorWithRed:250.0/255.0 green:219.0/255.0 blue:63.0/255.0 alpha:1.0]  CGColor], (id)[[UIColor colorWithRed:230.0/255.0 green:85.0/255.0 blue:47.0/255.0 alpha:1.0]  CGColor], nil];
-//    [self.view.layer insertSublayer:gradient atIndex:0];
+    highScoreTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, [[UIScreen mainScreen] bounds].size.height/3 - 50, [[UIScreen mainScreen] bounds].size.width, 20)];
+    highScoreTitleLabel.textAlignment = NSTextAlignmentCenter;
+    highScoreTitleLabel.text = @"High Score:";
+    highScoreTitleLabel.textColor = [UIColor blackColor];
+    
+    [self.view addSubview:highScoreTitleLabel];
+    
+    highestLevelTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 1.7*[[UIScreen mainScreen] bounds].size.height/3 - 50, [[UIScreen mainScreen] bounds].size.width, 20)];
+    highestLevelTitleLabel.textAlignment = NSTextAlignmentCenter;
+    highestLevelTitleLabel.text = @"Highest Level Completed:";
+    highestLevelLabel.textColor = [UIColor blackColor];
+    [self.view addSubview:highestLevelTitleLabel];
+    
     [self.view.layer setBackgroundColor:[UIColor whiteColor].CGColor];
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -59,6 +71,15 @@
     [self.view addSubview:highestLevelLabel];
     
     [self.shareHighScoreButton addTarget:self action:@selector(myButtonHandlerAction) forControlEvents:UIControlEventTouchUpInside];
+    
+    NSMutableAttributedString *text =
+    [[NSMutableAttributedString alloc]
+     initWithAttributedString: label.attributedText];
+    
+    [text addAttribute:NSForegroundColorAttributeName
+                 value:[UIColor orangeColor]
+                 range:NSMakeRange(1, 1)];
+    [label setAttributedText: text];
     
     [super viewDidLoad];
     

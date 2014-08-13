@@ -6,8 +6,12 @@
 //  Copyright (c) 2014 Eric Pogash. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "PayPal.h"              // imports the PayPal library header file
+// PayPal.h includes the statement #import <UIKit/UIKit.h>
 
 @interface PaymentViewController : UIViewController
+<PayPalPaymentDelegate> {       // this class implements the PayPalPaymentDelegate protocol
+}
 
+-(void)payWithPayPal;           // called when the user clicks the "Pay with PayPal" button
 @end

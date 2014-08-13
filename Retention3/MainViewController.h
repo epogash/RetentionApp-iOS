@@ -14,6 +14,7 @@
 @property (nonatomic, strong) NSNumber *highestLevel;
 @property (nonatomic, strong) IBOutlet UILabel *label;
 - (id)init;
+-(IBAction) thankDeveloperButtonTapped;
 @end
 
 

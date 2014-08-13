@@ -9,8 +9,8 @@
             <objects>
                 <viewController storyboardIdentifier="MainViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vXZ-lx-hvc" customClass="MainViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="mvn-Od-JsP"/>
-                        <viewControllerLayoutGuide type="bottom" id="FVB-Kr-bLe"/>
+                        <viewControllerLayoutGuide type="top" id="l6O-ai-M4p"/>
+                        <viewControllerLayoutGuide type="bottom" id="y7I-UF-zSA"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
@@ -56,27 +56,21 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-143" y="110"/>
+            <point key="canvasLocation" x="-173" y="126"/>
         </scene>
         <!--High Score View Controller-->
         <scene sceneID="5xV-QF-F0T">
             <objects>
                 <viewController id="Ql0-rQ-niH" customClass="HighScoreViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="8zE-ZL-0Mf"/>
-                        <viewControllerLayoutGuide type="bottom" id="FeD-kp-VWk"/>
+                        <viewControllerLayoutGuide type="top" id="6vT-CW-YQF"/>
+                        <viewControllerLayoutGuide type="bottom" id="J9v-YR-trY"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="zfw-dV-DFm">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Highest Level Completed:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o9w-la-6ld">
-                                <rect key="frame" x="61" y="235" width="199" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vdr-ZR-ZBc" customClass="CustomButton">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vdr-ZR-ZBc" customClass="CustomButton">
                                 <rect key="frame" x="125" y="400" width="71" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
@@ -88,14 +82,7 @@
                                     <segue destination="vXZ-lx-hvc" kind="modal" identifier="backButtonSegue" modalTransitionStyle="crossDissolve" id="Gor-YG-SLC"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="High Score:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I8N-92-Hgg">
-                                <rect key="frame" x="115" y="122" width="90" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jPF-9f-blr" customClass="CustomButton">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jPF-9f-blr" customClass="CustomButton">
                                 <rect key="frame" x="123" y="340" width="74" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
@@ -103,31 +90,43 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Retention" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XMs-9S-jAd">
+                                <rect key="frame" x="94" y="68" width="133" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="vdr-ZR-ZBc" secondAttribute="bottom" constant="43" id="DYr-mA-Z51"/>
+                            <constraint firstAttribute="bottom" secondItem="jPF-9f-blr" secondAttribute="bottom" constant="103" id="e5z-0S-sHh"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="label" destination="XMs-9S-jAd" id="uCW-AH-you"/>
                         <outlet property="shareHighScoreButton" destination="jPF-9f-blr" id="VLx-NK-lvH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QHS-Ur-WAD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="744" y="396"/>
+            <point key="canvasLocation" x="598" y="258"/>
         </scene>
         <!--Difficulty View Controller-->
         <scene sceneID="rWg-oO-Jvy">
             <objects>
                 <viewController id="fei-M5-lID" customClass="DifficultyViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="gdZ-12-oJC"/>
-                        <viewControllerLayoutGuide type="bottom" id="Wf6-rs-aIH"/>
+                        <viewControllerLayoutGuide type="top" id="4y2-kX-H18"/>
+                        <viewControllerLayoutGuide type="bottom" id="4nB-rB-HMy"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="FH4-7L-DQd">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aSN-UU-wMx" customClass="CustomButton">
-                                <rect key="frame" x="63" y="91" width="195" height="60"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aSN-UU-wMx" customClass="CustomButton">
+                                <rect key="frame" x="63" y="90" width="195" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                 <state key="normal" title="Beginner">
@@ -137,8 +136,8 @@
                                     <segue destination="ua8-rB-Yc7" kind="modal" identifier="beginnerSegue" modalTransitionStyle="crossDissolve" id="Z96-m7-aZA"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rDw-gn-s1D" customClass="CustomButton">
-                                <rect key="frame" x="63" y="170" width="195" height="60"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rDw-gn-s1D" customClass="CustomButton">
+                                <rect key="frame" x="63" y="165" width="195" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                 <state key="normal" title="Intermediate">
@@ -149,8 +148,8 @@
                                     <segue destination="ua8-rB-Yc7" kind="modal" identifier="intermediateSegue" modalTransitionStyle="crossDissolve" id="NSJ-in-T9x"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kYI-Ji-nu9" customClass="CustomButton">
-                                <rect key="frame" x="63" y="250" width="195" height="60"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kYI-Ji-nu9" customClass="CustomButton">
+                                <rect key="frame" x="63" y="245" width="195" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                 <state key="normal" title="Advanced">
@@ -167,7 +166,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zri-SO-VhS" customClass="CustomButton">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zri-SO-VhS" customClass="CustomButton">
                                 <rect key="frame" x="125" y="415" width="71" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
@@ -179,7 +178,7 @@
                                     <segue destination="vXZ-lx-hvc" kind="modal" identifier="backButtonSegue" modalTransitionStyle="crossDissolve" id="E5D-l8-Xzg"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GLO-wU-Bco" customClass="CustomButton">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GLO-wU-Bco" customClass="CustomButton">
                                 <rect key="frame" x="63" y="329" width="195" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
@@ -193,8 +192,21 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="rDw-gn-s1D" secondAttribute="bottom" constant="255" placeholder="YES" id="2cj-MM-ZxE"/>
+                            <constraint firstAttribute="bottom" secondItem="kYI-Ji-nu9" secondAttribute="bottom" constant="175" placeholder="YES" id="S34-RQ-Fco"/>
+                            <constraint firstAttribute="bottom" secondItem="aSN-UU-wMx" secondAttribute="bottom" constant="330" placeholder="YES" id="UZX-d7-TqE"/>
+                            <constraint firstAttribute="bottom" secondItem="Zri-SO-VhS" secondAttribute="bottom" constant="28" placeholder="YES" id="d4M-Dn-pRS"/>
+                            <constraint firstAttribute="bottom" secondItem="GLO-wU-Bco" secondAttribute="bottom" constant="91" placeholder="YES" id="usp-Hy-l4v"/>
+                        </constraints>
                     </view>
+                    <size key="freeformSize" width="320" height="480"/>
                     <connections>
+                        <outlet property="advancedButton" destination="kYI-Ji-nu9" id="2rm-wd-wsB"/>
+                        <outlet property="backButton" destination="Zri-SO-VhS" id="CDr-I4-xuh"/>
+                        <outlet property="beginnerButton" destination="aSN-UU-wMx" id="d0E-Bu-Uys"/>
+                        <outlet property="hardcoreButton" destination="GLO-wU-Bco" id="oma-pE-TnS"/>
+                        <outlet property="intermediateButton" destination="rDw-gn-s1D" id="bxG-3M-jhc"/>
                         <segue destination="KrW-nQ-0SH" kind="modal" identifier="purchaseSegue" id="2Bp-RU-LGq"/>
                         <segue destination="ua8-rB-Yc7" kind="modal" identifier="hardcoreModeSegue" id="05Q-2e-aD6"/>
                     </connections>
@@ -208,8 +220,8 @@
             <objects>
                 <viewController id="KrW-nQ-0SH" customClass="PurchaseViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="oZV-aT-Kin"/>
-                        <viewControllerLayoutGuide type="bottom" id="BYA-Ak-38Z"/>
+                        <viewControllerLayoutGuide type="top" id="L5J-t5-SSU"/>
+                        <viewControllerLayoutGuide type="bottom" id="EHv-wv-dsA"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="h9P-iC-fLU">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
@@ -234,7 +246,7 @@
                                     <action selector="buyProduct:" destination="KrW-nQ-0SH" eventType="touchUpInside" id="X9a-2P-cKy"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K1b-rn-dMK" customClass="CustomButton">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K1b-rn-dMK" customClass="CustomButton">
                                 <rect key="frame" x="40" y="409" width="71" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
@@ -253,7 +265,7 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cvi-6w-d3l" customClass="CustomButton">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cvi-6w-d3l" customClass="CustomButton">
                                 <rect key="frame" x="199" y="409" width="81" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
@@ -267,6 +279,10 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Cvi-6w-d3l" secondAttribute="bottom" constant="34" id="rDV-iY-paH"/>
+                            <constraint firstAttribute="bottom" secondItem="K1b-rn-dMK" secondAttribute="bottom" constant="34" id="y5W-ou-AHp"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="buyButton" destination="ndh-0R-IlQ" id="DUi-Y3-NLV"/>
@@ -276,22 +292,22 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w5m-WQ-Bbc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="390" y="-944"/>
+            <point key="canvasLocation" x="360" y="-998"/>
         </scene>
         <!--Numbers View Controller-->
         <scene sceneID="X0m-Nm-joy">
             <objects>
                 <viewController storyboardIdentifier="NumbersViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ua8-rB-Yc7" customClass="NumbersViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="wMD-I9-p9w"/>
-                        <viewControllerLayoutGuide type="bottom" id="evn-Ba-Lep"/>
+                        <viewControllerLayoutGuide type="top" id="EqE-Sc-zPJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="Bvy-eJ-J1F"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="3gX-1E-SJC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bJm-0l-ttJ" customClass="CustomButton">
-                                <rect key="frame" x="86" y="340" width="149" height="48"/>
+                                <rect key="frame" x="86" y="398" width="149" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                 <state key="normal" title="Main Menu">
@@ -304,7 +320,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h7V-Ij-xb3" customClass="CustomButton">
-                                <rect key="frame" x="116" y="264" width="88" height="38"/>
+                                <rect key="frame" x="116" y="294" width="88" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                 <state key="normal" title="Pause">
@@ -334,8 +350,8 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="E5D-l8-Xzg"/>
-        <segue reference="eAZ-25-cdf"/>
+        <segue reference="Gor-YG-SLC"/>
+        <segue reference="EaU-VM-xt0"/>
         <segue reference="05Q-2e-aD6"/>
     </inferredMetricsTieBreakers>
 </document>

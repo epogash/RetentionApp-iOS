@@ -7,6 +7,7 @@
 //
 
 #import "PurchaseViewController.h"
+#import "Reachability.h"
 
 @interface PurchaseViewController ()
 
@@ -14,17 +15,92 @@
 
 @implementation PurchaseViewController
 
-- (void)viewDidLoad
-{
+- (void)viewWillAppear:(BOOL)animated {
+    self.productID = @"com.retention.retention.hardcore";
+    self.productDescription.hidden = YES;
+    self.buyButton.enabled = NO;
+    self.buyButton.hidden = NO;
+    
+    // check for internet connection
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(checkNetworkStatus:) name:kReachabilityChangedNotification object:nil];
+    
+    internetReachable = [Reachability reachabilityForInternetConnection];
+    [internetReachable startNotifier];
+    
+    // check if a pathway to a random host exists
+    hostReachable = [Reachability reachabilityWithHostName:@"www.apple.com"];
+    [hostReachable startNotifier];
+    
+    // now patiently wait for the notification
+    
     [[SKPaymentQueue defaultQueue] addTransactionObserver:self];
     self.productDescription.userInteractionEnabled = NO;
     self.productDescription.layer.cornerRadius = 10;
     self.productDescription.layer.borderWidth = 2;
     self.productDescription.layer.borderColor = [UIColor orangeColor].CGColor;
     
-    [super viewDidLoad];
-    self.productID = @"com.retention.retention.hardcore";
     [self getProductInfo];
+}
+
+-(void) checkNetworkStatus:(NSNotification *)notice
+{
+    // called after network status changes
+    NetworkStatus internetStatus = [internetReachable currentReachabilityStatus];
+    switch (internetStatus)
+    {
+        case NotReachable:
+        {
+            NSLog(@"The internet is down.");
+            self.internetActive = NO;
+            
+            break;
+        }
+        case ReachableViaWiFi:
+        {
+            NSLog(@"The internet is working via WIFI.");
+            self.internetActive = YES;
+            
+            break;
+        }
+        case ReachableViaWWAN:
+        {
+            NSLog(@"The internet is working via WWAN.");
+            self.internetActive = YES;
+            
+            break;
+        }
+    }
+    
+    NetworkStatus hostStatus = [hostReachable currentReachabilityStatus];
+    switch (hostStatus)
+    {
+        case NotReachable:
+        {
+            NSLog(@"A gateway to the host server is down.");
+            self.hostActive = NO;
+            
+            break;
+        }
+        case ReachableViaWiFi:
+        {
+            NSLog(@"A gateway to the host server is working via WIFI.");
+            self.hostActive = YES;
+            
+            break;
+        }
+        case ReachableViaWWAN:
+        {
+            NSLog(@"A gateway to the host server is working via WWAN.");
+            self.hostActive = YES;
+            
+            break;
+        }
+    }
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
 
@@ -47,8 +123,15 @@
 
 -(void)getProductInfo
 {
-    
-    if ([SKPaymentQueue canMakePayments])
+    if ([[Reachability reachabilityForInternetConnection] currentReachabilityStatus] == NotReachable)
+    {
+        self.buyButton.hidden = YES;
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"No Internet Connection"
+                                                        message:@"You cannot purchase Hardcore mode because you don't have an internet connection on this device."
+                                                       delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+    }
+     else if ([SKPaymentQueue canMakePayments])
     {
         SKProductsRequest *request = [[SKProductsRequest alloc]
                                       initWithProductIdentifiers:
@@ -57,9 +140,10 @@
         
         [request start];
     }
-    else
-        _productDescription.text =
-        @"Please enable In App Purchase in Settings";
+     else {
+         self.productDescription.hidden = NO;
+        _productDescription.text = @"Please enable In App Purchase in Settings";
+     }
 }
 
 #pragma mark -
@@ -82,10 +166,8 @@
     
     products = response.invalidProductIdentifiers;
     
-    for (SKProduct *product in products)
-    {
-        NSLog(@"Product not found: %@", product);
-    }
+    self.productDescription.hidden = NO;
+    self.buyButton.enabled = YES;
 }
 
 - (IBAction)buyProduct:(id)sender {
@@ -131,6 +213,11 @@
 
 - (IBAction)restoreCompletedTransactions {
     [[SKPaymentQueue defaultQueue] restoreCompletedTransactions];
+}
+
+-(void) viewWillDisappear:(BOOL)animated
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 @end

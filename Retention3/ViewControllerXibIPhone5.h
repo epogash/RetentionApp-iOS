@@ -10,4 +10,6 @@
 
 @interface ViewControllerXibIPhone5 : UIViewController
 
+ - (id)initWithNibNameforIphone4:(NSString *)nibNameOrNil4 NibNameforIphone5:(NSString *)nibNameOrNil5 NibNameforIpad:(NSString *)nibNameOrNilpad bundle:(NSBundle *)nibBundleOrNil;
+
 @end

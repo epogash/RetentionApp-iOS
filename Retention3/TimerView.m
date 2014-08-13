@@ -79,10 +79,18 @@
     /// Set text alignment
     paragraphStyle.alignment = NSTextAlignmentCenter;
     
-    NSDictionary *attributes = @{ NSFontAttributeName: font,
-                                  NSParagraphStyleAttributeName: paragraphStyle,
-                                  NSForegroundColorAttributeName: [UIColor whiteColor]};
-    [textContent drawInRect: textRect withAttributes:attributes];
+    if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {
+        CGContextRef context = UIGraphicsGetCurrentContext();
+        CGContextSetFillColorWithColor(context, [UIColor whiteColor].CGColor);
+        [textContent drawInRect:textRect withFont:font lineBreakMode:NSLineBreakByClipping alignment:UITextAlignmentCenter];
+    } else {
+        NSDictionary *attributes = @{ NSFontAttributeName: font,
+                                      NSParagraphStyleAttributeName: paragraphStyle,
+                                      NSForegroundColorAttributeName: [UIColor whiteColor]};
+        [textContent drawInRect: textRect withAttributes:attributes];
+    }
+    
+    
 }
 
 @end

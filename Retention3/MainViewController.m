@@ -15,6 +15,7 @@
 @implementation MainViewController
 @synthesize highestLevel;
 @synthesize label;
+
 - (void)viewDidLoad
 {
 //    CAGradientLayer *gradient = [CAGradientLayer layer];
@@ -61,4 +62,10 @@
     NSAssert(NO, @"Initialize with -init");
     return nil;
 }
+
+-(IBAction) thankDeveloperButtonTapped
+{
+   
+}
+
 @end
