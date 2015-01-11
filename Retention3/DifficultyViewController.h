@@ -17,6 +17,9 @@
 @property (nonatomic, strong) IBOutlet UIButton *advancedButton;
 @property (nonatomic, strong) IBOutlet UIButton *hardcoreButton;
 @property (nonatomic, strong) IBOutlet UIButton *backButton;
+
+@property (strong, nonatomic) UIImageView *padlockImageView;
+
 -(void) determineAndAddConstraints;
 - (IBAction) hardcoreButtonPressed;
 

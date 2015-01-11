@@ -55,7 +55,14 @@
 }
 - (void)viewWillAppear
 {
-    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if([defaults valueForKey:@"hardcoreModeUnlocked"]) {
+        self.padlockImageView.hidden = YES;
+        [self.hardcoreButton setTitle:@"Hardcore" forState:UIControlStateNormal];
+    } else {
+        self.padlockImageView.hidden = NO;
+        [self.hardcoreButton setTitle:@"" forState:UIControlStateNormal];
+    }
 }
 
 - (void)viewDidLoad
@@ -64,6 +71,31 @@
     [self.view.layer setBackgroundColor:[UIColor whiteColor].CGColor];
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    NSString *version = [[UIDevice currentDevice] systemVersion];
+    int ver = [version intValue];
+    if (ver < 7 && !IS_IPHONE5){
+        self.padlockImageView = [[UIImageView alloc] initWithFrame:CGRectMake(self.hardcoreButton.bounds.size.width/2 - 15, 5, self.hardcoreButton.bounds.size.height - 30, self.hardcoreButton.bounds.size.height - 30)];
+        UIImage *image = [UIImage imageNamed:@"PadlockImage.jpg"];
+        self.padlockImageView.image = image;
+        [self.hardcoreButton addSubview:self.padlockImageView];
+    }
+    else{
+        self.padlockImageView = [[UIImageView alloc] initWithFrame:CGRectMake(self.hardcoreButton.bounds.size.width/2 - 25, 5, self.hardcoreButton.bounds.size.height - 10, self.hardcoreButton.bounds.size.height - 10)];
+        UIImage *image = [UIImage imageNamed:@"PadlockImage.jpg"];
+        self.padlockImageView.image = image;
+        [self.hardcoreButton addSubview:self.padlockImageView];
+    }
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if([defaults valueForKey:@"hardcoreModeUnlocked"]) {
+        self.padlockImageView.hidden = YES;
+        [self.hardcoreButton setTitle:@"Hardcore" forState:UIControlStateNormal];
+    } else {
+        self.padlockImageView.hidden = NO;
+        [self.hardcoreButton setTitle:@"" forState:UIControlStateNormal];
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning

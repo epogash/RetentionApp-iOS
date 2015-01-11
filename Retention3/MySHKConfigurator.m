@@ -10,6 +10,10 @@
 
 @implementation MySHKConfigurator
 
+- (NSString*)sharersPlistName {
+	return @"MySHKSharers.plist";
+}
+
 - (NSString*)facebookAppId {
 	return @"480790838723685";
 }
@@ -26,8 +30,41 @@
 	return @"http://www.callbackurl.com";
 }
 
-- (NSArray*)defaultFavoriteURLSharers {
-    return [NSArray arrayWithObjects:@"SHKTwitter",@"SHKiOSTwitter", @"SHKFacebook", @"SHKiOSFacebook", @"SHKPocket", nil];
+// Plurk - http://www.plurk.com/API
+- (NSString *)plurkAppKey {
+    return @"Ws03w7cKcYMm";
+}
+
+- (NSString *)plurkAppSecret {
+    return @"UAbn7sTtDkozBBOdj9CuvnCIy9udBxN6";
+}
+
+- (NSString *)plurkCallbackURL {
+    return @"http://www.callback.com";
+}
+
+// Tumblr - http://www.tumblr.com/docs/en/api/v2
+- (NSString*)tumblrConsumerKey {
+	return @"20fu4quqoEhiwm9O8WbbB93tPQqCQCHSAZVcMOkUC5gvuNCqKx";
+}
+
+- (NSString*)tumblrSecret {
+	return @"RTx9EQYebLDK1RP9z9xWZToiVzo97Ppc0XPw5Ww39GOsgDUPje";
+}
+
+//you can put whatever here. It must be the same you entered in tumblr app registration, eg tumblr.sharekit.com
+- (NSString*)tumblrCallbackUrl {
+	return @"www.phundless.com";
+}
+
+// Vkontakte
+// SHKVkontakteAppID is the Application ID provided by Vkontakte
+- (NSString*)vkontakteAppId {
+	return @"4500298";
+}
+
+- (NSArray*)defaultFavoriteImageSharers {
+    return [NSArray arrayWithObjects:@"SHKFacebook", @"SHKiOSFacebook", @"SHKTwitter", @"SHKiOSTwitter", @"SHKTumblr", nil];
 }
 
 @end

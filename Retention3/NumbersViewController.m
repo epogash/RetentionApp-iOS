@@ -139,21 +139,21 @@ int livesRemaining;
     self.countdownLabel.text = @"3";
     self.countdownLabel.font = [UIFont systemFontOfSize:35.0];
     
-    self.highestScoreLabel = [[UILabel alloc] initWithFrame:CGRectMake([[UIScreen mainScreen] bounds].size.width/1.3, [[UIScreen mainScreen] bounds].size.height/21, 50, 60)];
+    self.highestScoreLabel = [[UILabel alloc] initWithFrame:CGRectMake([[UIScreen mainScreen] bounds].size.width/1.3, [[UIScreen mainScreen] bounds].size.height/21, 50, 45)];
     self.highestScoreLabel.numberOfLines = 0;
     self.highestScoreLabel.adjustsFontSizeToFitWidth = NO;
-    self.highestScoreLabel.textAlignment = NSTextAlignmentRight;
-    self.highestScoreLabel.font = [UIFont systemFontOfSize:15.0];
+    self.highestScoreLabel.textAlignment = NSTextAlignmentCenter;
+    self.highestScoreLabel.font = [UIFont systemFontOfSize:14.0];
     self.highestScoreLabel.text = [NSString stringWithFormat:@"Best:\n%@", highestScore];
-
+    
     self.scoreLabel = [[UILabel alloc] initWithFrame:CGRectMake([[UIScreen mainScreen] bounds].size.width/1.3, [[UIScreen mainScreen] bounds].size.height/9, 50, 60)];
     self.scoreLabel.numberOfLines = 0;
     self.scoreLabel.adjustsFontSizeToFitWidth = NO;
-    self.scoreLabel.textAlignment = NSTextAlignmentRight;
-    self.scoreLabel.font = [UIFont systemFontOfSize:15.0];
+    self.scoreLabel.textAlignment = NSTextAlignmentCenter;
+    self.scoreLabel.font = [UIFont systemFontOfSize:14.0];
     self.scoreLabel.text = [NSString stringWithFormat:@"Score:\n%@", currentScore];
     [self.scoreLabel setBackgroundColor:[UIColor clearColor]];
-    
+
     //add subviews
     [self.view addSubview:self.countdownLabel];
     [self.view addSubview:self.getReadyLabel];
@@ -165,9 +165,13 @@ int livesRemaining;
 }
 - (void) countdown:(NSTimer *) timer
 {
-    if([self.countdownLabel.text  isEqualToString: @"1"]){
+    if([self.countdownLabel.text  isEqualToString: @"2"]){
         pauseCountdownButton.hidden = YES;
         pauseCountdownButton.enabled = NO;
+        
+        self.countdownLabel.text = [NSString stringWithFormat:@"%d",[self.countdownLabel.text  intValue] - 1];
+    }
+    else if([self.countdownLabel.text  isEqualToString: @"1"]){
         
         [timer invalidate];
         [self.countdownLabel removeFromSuperview];
@@ -275,9 +279,13 @@ int livesRemaining;
 }
 
 - (void) hidePauseMenu {
-    pauseCountdownButton.hidden = NO;
-    pauseCountdownButton.enabled = YES;
-    
+    if([self.countdownLabel.text  isEqualToString: @"1"]){
+       pauseCountdownButton.hidden = YES;
+       pauseCountdownButton.enabled = NO;
+    }else {
+        pauseCountdownButton.hidden = NO;
+        pauseCountdownButton.enabled = YES;
+    }
     [self.pauseMenu hide];
     
     [self.dimView removeFromSuperview];
@@ -336,6 +344,7 @@ int livesRemaining;
         [self.view addSubview:highestScoreLabel];
         [self.view addSubview:scoreLabel];
         //if only one number, print 'number' instead of 'numbers'
+        self.tapNumbersLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:13];
         if(self.randomNumbersArray.count == 1) {
              self.tapNumbersLabel.text = [NSString stringWithFormat:@"Tap the %d number", [self.levelNumberLabel.text intValue]];
         }
@@ -591,7 +600,8 @@ int livesRemaining;
     [self.scoreLabel removeFromSuperview];
     
     //add "Game over"
-    self.tapNumbersLabel.text = @"Game Over!\rYou chose the wrong number";
+    self.tapNumbersLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:15];
+    self.tapNumbersLabel.text = @"Game Over!\r\rYou chose the wrong number";
     [secondMainMenuButton setHidden:NO];
     secondMainMenuButton.enabled = YES;
     livesRemaining = 3;

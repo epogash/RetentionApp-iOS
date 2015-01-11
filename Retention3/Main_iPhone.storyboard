@@ -182,7 +182,7 @@
                                 <rect key="frame" x="63" y="329" width="195" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                                <state key="normal" title="Hardcore">
+                                <state key="normal">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -207,8 +207,8 @@
                         <outlet property="beginnerButton" destination="aSN-UU-wMx" id="d0E-Bu-Uys"/>
                         <outlet property="hardcoreButton" destination="GLO-wU-Bco" id="oma-pE-TnS"/>
                         <outlet property="intermediateButton" destination="rDw-gn-s1D" id="bxG-3M-jhc"/>
-                        <segue destination="KrW-nQ-0SH" kind="modal" identifier="purchaseSegue" id="2Bp-RU-LGq"/>
-                        <segue destination="ua8-rB-Yc7" kind="modal" identifier="hardcoreModeSegue" id="05Q-2e-aD6"/>
+                        <segue destination="KrW-nQ-0SH" kind="modal" identifier="purchaseSegue" modalTransitionStyle="crossDissolve" id="2Bp-RU-LGq"/>
+                        <segue destination="ua8-rB-Yc7" kind="modal" identifier="hardcoreModeSegue" modalTransitionStyle="crossDissolve" id="05Q-2e-aD6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dMn-nB-E4q" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -255,7 +255,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="fei-M5-lID" kind="modal" id="eAZ-25-cdf"/>
+                                    <segue destination="fei-M5-lID" kind="modal" modalTransitionStyle="crossDissolve" id="eAZ-25-cdf"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m1p-Vd-eVE">
@@ -350,7 +350,7 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Gor-YG-SLC"/>
+        <segue reference="E5D-l8-Xzg"/>
         <segue reference="EaU-VM-xt0"/>
         <segue reference="05Q-2e-aD6"/>
     </inferredMetricsTieBreakers>
